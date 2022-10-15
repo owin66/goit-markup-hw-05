@@ -96,6 +96,17 @@ img {
 .studio {
   color: var(--brand-color);
 }
+.studio::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--brand-color);
+  border-radius: 2px;
+  left: 0;
+  bottom: 0;
+}
 .main-navigation {
   display: flex;
 }
@@ -104,6 +115,7 @@ img {
   margin-right: 50px;
 }
 .main-navigation .link {
+  position: relative;
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
