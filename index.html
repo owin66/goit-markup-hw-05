@@ -46,10 +46,20 @@
     </div>
   </header>
   <main class="filling">
+
     <section class="section main-section">
       <div class="container">
         <h1 class="page-main_main-text">Ефективні рішення для вашого бізнесу</h1>
-        <button type="button" class="page-main_main-text_button">Замовити послугу</button>
+        <button type="button" class="page-main_main-text_button" data-modal-open>Замовити послугу</button>
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <button class="close" type="button" data-modal-close>
+              <svg class="icon-close" width="11" height="11">
+                <use href="./images/icons.svg#icon-close-black"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
     <section class="section">
@@ -101,12 +111,21 @@
         <ul class="work">
           <li class="item-work">
             <img src="./images/computer.jpg" alt="computer" width="370" height="294">
+            <div class="description">
+              <p class="text-description">Десктопні додатки</p>
+            </div>
           </li>
           <li class="item-work">
             <img src="./images/phone.jpg" alt="phone" width="370" height="294">
+            <div class="description">
+              <p class="text-description">Мобільні додатки</p>
+            </div>
           </li>
           <li class="item-work">
             <img src="./images/hand.jpg" alt="tablet" width="370" height="294">
+            <div class="description">
+              <p class="text-description">Дизайнерські рішення</p>
+            </div>
           </li>
         </ul>
       </div>
@@ -287,6 +306,7 @@
       </div>
     </div>
   </footer>
+  <script src="./js/modal.js"></script>
 </body>
 
 </html>
