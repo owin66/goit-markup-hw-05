@@ -101,11 +101,10 @@ img {
   content: '';
   display: block;
   width: 100%;
-  height: 4px;
-  background-color: var(--brand-color);
   border-radius: 2px;
+  border-bottom: 4px solid var(--brand-color);
   left: 0;
-  bottom: 0;
+  bottom: -1%;
 }
 .main-navigation {
   display: flex;
@@ -119,6 +118,11 @@ img {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+}
+.link {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .main-navigation a:hover,
 .main-navigation a:focus {
@@ -265,15 +269,45 @@ header > .container {
 .ul-portfolio.item-portfolio:not(:last-child) {
   margin-right: 30px;
 }
+
 .item-portfolio:hover,
 .item-portfolio:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .item-portfolio > a {
   display: block;
   color: inherit;
   list-style: none;
+}
+.overlay {
+  width: 370px;
+  height: 294px;
+  position: relative;
+  overflow: hidden;
+}
+.overlay-txt {
+  position: absolute;
+  transform: translateY(0);
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  background: rgba(33, 150, 243, 0.9);
+
+  font-size: 18px;
+  letter-spacing: 0.03em;
+
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-link:hover .overlay-txt,
+.portfolio-link:hover .overlay-txt {
+  transform: translateY(-100%);
+  color: var(--white-text-color);
 }
 .text-portfolio {
   padding: 20px 24px;
@@ -286,9 +320,11 @@ header > .container {
   line-height: 2;
   color: var(--product-text-color);
   margin-bottom: 4px;
+  letter-spacing: 0.06em;
 }
 .ul-portfolio p {
   line-height: 1.88;
+  letter-spacing: 3%;
   color: var(--background-text-color);
 }
 .ul-portfolio ul {
@@ -418,6 +454,9 @@ header > .container {
 .team-icon-link:focus {
   background-color: var(--brand-color);
   color: var(--color-icon);
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-icon-link {
   color: rgba(175, 177, 184, 1);
@@ -453,6 +492,9 @@ header > .container {
 .client-icon-item:focus {
   color: var(--brand-color);
   border-color: var(--brand-color);
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .page-footer ul {
   list-style-type: var(--off-list-style-type);
@@ -566,4 +608,7 @@ header > .container {
 .footer-icon-link:hover,
 .footer-icon-link:focus {
   background-color: var(--brand-color);
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
