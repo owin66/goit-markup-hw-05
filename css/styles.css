@@ -118,12 +118,11 @@ img {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
-}
-.link {
   transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .main-navigation a:hover,
 .main-navigation a:focus {
   color: var(--brand-color);
@@ -149,6 +148,9 @@ header > .container {
   align-items: center;
   gap: 10px;
   flex-direction: row-reverse;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-mail {
   width: 16px;
@@ -234,15 +236,14 @@ header > .container {
   cursor: pointer;
   text-align: center;
   padding: 6px 22px;
-}
-.page-portfolio_main-text_button:focus {
-  background-color: var(--brand-color);
-  color: var(--white-text-color);
   border-radius: 4px;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.page-portfolio_main-text_button:hover {
+
+.page-portfolio_main-text_button:hover,
+.page-portfolio_main-text_button:focus {
   background-color: var(--brand-color);
   color: var(--white-text-color);
   border-radius: 4px;
@@ -274,14 +275,14 @@ header > .container {
 .item-portfolio:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .item-portfolio > a {
   display: block;
   color: inherit;
   list-style: none;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .overlay {
   width: 370px;
@@ -305,7 +306,7 @@ header > .container {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-link:hover .overlay-txt,
-.portfolio-link:hover .overlay-txt {
+.portfolio-link:focus .overlay-txt {
   transform: translateY(-100%);
   color: var(--white-text-color);
 }
@@ -472,14 +473,14 @@ header > .container {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-icon-link:hover,
 .team-icon-link:focus {
   background-color: var(--brand-color);
   color: var(--color-icon);
-  transition-property: color, background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-icon-link {
   color: rgba(175, 177, 184, 1);
@@ -507,6 +508,9 @@ header > .container {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   color: #afb1b8;
+  transition-property: color, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-icon-network {
   fill: currentColor;
@@ -515,9 +519,6 @@ header > .container {
 .client-icon-item:focus {
   color: var(--brand-color);
   border-color: var(--brand-color);
-  transition-property: color, background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .page-footer ul {
   list-style-type: var(--off-list-style-type);
@@ -624,6 +625,9 @@ header > .container {
   padding: 12px;
   background: rgba(255, 255, 255, 0.1);
   color: var(--white-text-color);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-footer {
   fill: currentColor;
@@ -631,9 +635,6 @@ header > .container {
 .footer-icon-link:hover,
 .footer-icon-link:focus {
   background-color: var(--brand-color);
-  transition-property: color, background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop {
   width: 100%;
@@ -669,9 +670,26 @@ header > .container {
   border-radius: 50%;
   color: #000;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+}
+.icon-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close:hover,
+.close:focus {
+  cursor: pointer;
+  fill: var(--brand-color);
+  border-color: var(--brand-color);
 }
